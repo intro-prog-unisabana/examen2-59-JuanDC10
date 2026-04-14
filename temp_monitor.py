@@ -31,7 +31,7 @@ def average_temp(monitor):
 
 def format_readings(monitor):
     lista = monitor["readings"]
-     resultado = "["
+      resultado = "["
     i = 0
     while i < len(lista):
         resultado = resultado + str(lista[i])
@@ -42,21 +42,58 @@ def format_readings(monitor):
     return resultado
 
 def highest_temp(monitor):
-    return monitor["max"]   
+    lista = monitor['readings']
+    if len(lista) == 0:
+        return None
+    mayor = lista[0]
+    i = 1
+    while i < len(lista):
+        if lista[i] > mayor:
+            mayor = lista[i]
+        i = i + 1
+    return mayor
 
 
 def coldest_window(monitor, k):
-    min_monitor = min(monitor[0,3]) 
-    return min_monitor / len(min_monitor)
+    lista = monitor['readings']
+    if len(lista) < k:
+        return None
+    i = 0
+    menor_promedio = None
+    while i <= len(lista) - k:
+        suma = 0
+        j = 0
+        while j < k:
+            suma = suma + lista[i + j]
+            j = j + 1
+        promedio = suma / k
+        if menor_promedio is None or promedio < menor_promedio:
+            menor_promedio = promedio
+        i = i + 1
+    return menor_promedio
+    
 
 
 def longest_rising_streak(monitor):
-    """
-    Retorna la longitud maxima de una secuencia de lecturas consecutivas
-    donde las temperaturas aumentan estrictamente.
-    """
-    # TODO: Implementar
-    pass
+    lista = monitor['readings']
+    if len(lista) == 0:
+        return 0
+    max_racha = 1
+    actual = 1
+    i = 1
+    while i < len(lista):
+        if lista[i] > lista[i - 1]:
+            actual = actual + 1
+        else:
+            if actual > max_racha:
+                max_racha = actual
+            actual = 1
+        i = i + 1
+    if actual > max_racha:
+        max_racha = actual
+    return max_racha    return fastest
+
+def fastest_multi_lap(timer, k):
 
 
 def main():
