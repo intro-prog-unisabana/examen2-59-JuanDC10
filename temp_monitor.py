@@ -11,53 +11,30 @@ def init(max_readings):
     monitor = {
         "max": max_readings
         "readings": []
-        "total": []
+        "total": 0.0
     }
-    return (max_readings)
-    # TODO: Implementar
-    pass
-
+    return monitor
 
 def add_reading(monitor, temp):
-    """
-    Agrega una nueva lectura con la temperatura especificada.
-    Retorna el diccionario modificado.
-    """
-    # TODO: Implementar
-    pass
-
+     if len(monitor['readings']) < monitor["max"]:
+        monitor["readings"].append(temp)
+        monitor["total"] = monitor["total"] + temp
+        return monitor
 
 def count(monitor):
-    """
-    Retorna el numero de lecturas agregadas.
-    """
-    # TODO: Implementar
-    pass
-
+    return len(monitor["readings])
 
 def average_temp(monitor):
-    """
-    Retorna la temperatura promedio de todas las lecturas.
-    """
-    # TODO: Implementar
-    pass
-
+    if count(monitor) == 0:
+         return 0
+    return count(monitor) / len(monitor)
 
 def format_readings(monitor):
-    """
-    Retorna una representacion en cadena de las temperaturas.
-    Formato: [t1, t2, t3, ..., tn]
-    """
-    # TODO: Implementar
-    pass
+    return monitor["readings"[0,13]]
 
 
 def highest_temp(monitor):
-    """
-    Retorna la temperatura mas alta de cualquier lectura.
-    """
-    # TODO: Implementar
-    pass
+    return monitor["max"]   
 
 
 def coldest_window(monitor, k):
