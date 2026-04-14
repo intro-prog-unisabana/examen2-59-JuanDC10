@@ -31,8 +31,15 @@ def average_temp(monitor):
 
 def format_readings(monitor):
     lista = monitor["readings"]
-    
-
+     resultado = "["
+    i = 0
+    while i < len(lista):
+        resultado = resultado + str(lista[i])
+        if i < len(lista) - 1:
+            resultado = resultado + ", "
+     i = i + 1
+    resultado = resultado + "]"
+    return resultado
 
 def highest_temp(monitor):
     return monitor["max"]   
