@@ -30,7 +30,8 @@ def average_temp(monitor):
     return count(monitor) / len(monitor)
 
 def format_readings(monitor):
-    return monitor["readings"[0,13]]
+    lista = monitor["readings"]
+
 
 
 def highest_temp(monitor):
@@ -38,11 +39,8 @@ def highest_temp(monitor):
 
 
 def coldest_window(monitor, k):
-    """
-    Retorna el promedio mas bajo de cualquier k lecturas consecutivas.
-    """
-    # TODO: Implementar
-    pass
+    min_monitor = min(monitor[0,3]) 
+    return min_monitor / len(min_monitor)
 
 
 def longest_rising_streak(monitor):
