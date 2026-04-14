@@ -7,10 +7,13 @@
 #   - 'total':    suma total de todas las temperaturas (float)
 
 
-def init(max_readings):
-    """
-    Crea y retorna un diccionario para almacenar hasta max_readings lecturas.
-    """
+def init(max_readings): 
+    monitor = {
+        "max": max_readings
+        "readings": []
+        "total": []
+    }
+    return (max_readings)
     # TODO: Implementar
     pass
 
