@@ -31,7 +31,7 @@ def average_temp(monitor):
 
 def format_readings(monitor):
     lista = monitor["readings"]
-
+    
 
 
 def highest_temp(monitor):
