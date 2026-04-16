@@ -37,7 +37,7 @@ def format_readings(monitor):
         resultado = resultado + str(lista[i])
         if i < len(lista) - 1:
             resultado = resultado + ", "
-     i = i + 1
+    i = i + 1
     resultado = resultado + "]"
     return resultado
 
