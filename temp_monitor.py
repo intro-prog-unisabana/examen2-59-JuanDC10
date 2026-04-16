@@ -9,9 +9,9 @@
 
 def init(max_readings): 
     monitor = {
-        "max": max_readings
-        "readings": []
-        "total": 0.0
+        "max": max_readings,
+        "readings": [],
+        "total": 0.0,
     }
     return monitor
 
