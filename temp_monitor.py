@@ -31,7 +31,7 @@ def average_temp(monitor):
 
 def format_readings(monitor):
     lista = monitor["readings"]
-      resultado = "["
+    resultado = "["
     i = 0
     while i < len(lista):
         resultado = resultado + str(lista[i])
